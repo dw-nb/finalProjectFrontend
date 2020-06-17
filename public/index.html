@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- custom css -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- leaflet css -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+  <!-- leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+  <!-- leaflet routing css -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+  <!-- leaflet routing JavaScript -->
+  <script src="http://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+  <!-- IP address lookup tool -->
+  <!-- <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script> -->
+  <title>COMPACKED</title>
+</head>
+
+<body>
+  <div id="mapAndSearch" class='mapAndSearch'>
+    <div id="mapContainer" class='mapContainer'></div>
+  </div>
+  <div id="searchBox" class='searchBox'>
+    <div class="autocomplete">
+      <input id="fromInput" autocomplete="off" class="from" type="text" name="location" placeholder="From Location">
+      <input id="toInput" autocomplete="off" class="to" type="text" name="location" placeholder="To Location">
+      <button id="map-button" class='map-button' type="submit">Visualise Route</button>
+    </div>
+    <div id="from" class='autocompleteList'></div>
+    <div id="to" class='autocompleteList'></div>
+  </div>
+  <div id="companyInfo">
+    <h3 id="thePrice">Enter locations to get trip cost</h3>
+  </div>
+  <!-- <script type="text/javascript" src='config.js'></script> -->
+  <script type="text/javascript" src='js/autocomplete.js'></script>
+  <script type="text/javascript" src='js/suburbData.js'></script>
+  <script type="text/javascript" src='js/script.js'></script>
+</body>
+
+</html>

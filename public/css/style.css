@@ -1,0 +1,103 @@
+/* TODO: Fix the autocomplete css... it is all over the place */
+body {
+  margin: 0;
+}
+
+#companyInfo {
+  border-top: 0px;
+  position: absolute;
+  z-index: 5000;
+  top: 90%;
+}
+.leaflet-right {
+  display: none;
+}
+
+.mapContainer {
+  position: absolute;
+  height: 90%;
+  width: 100%;
+}
+
+.searchBox {
+  height: 80px;
+  width: 75%;
+  left: 12.5%;
+  top: 70%;
+  text-align: center;
+  background-color: lightgrey;
+  z-index: 1000;
+  border: 15px;
+  position: absolute;
+  border-radius: 16px;
+  border-width: 0px;
+}
+
+.autocomplete {
+  position: relative;
+  top: 12px;
+  padding: 10px;
+}
+
+.map-button {
+  width: 20%;
+  padding: 10px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.from {
+  width: 35%;
+  padding: 10px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.to {
+  width: 35%;
+  padding: 10px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+.autocomplete {
+  position: relative;
+  top: 12px;
+  padding: 10px;
+}
+
+.autocompleteList {
+  position: relative;
+  padding: 0px;
+  text-align: left;
+  margin: 0px;
+}
+
+ul {
+  list-style: none;
+  white-space: nowrap;
+  overflow: hidden;
+  list-style: none;
+  padding-inline-start: 0px;
+  left: 20px;
+  padding: 10px;
+}
+
+ul li {
+  padding: 8px 0px;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+}
+
+#from {
+  width: 32%;
+  left: 22px;
+  background-color: white;
+}
+
+#to {
+  position: relative;
+  width: 32%;
+  left: 290px;
+  background-color: white;
+}
