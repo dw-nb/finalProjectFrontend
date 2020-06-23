@@ -1,103 +1,230 @@
-/* TODO: Fix the autocomplete css... it is all over the place */
 body {
   margin: 0;
+  background-color: #f2f2f3;
+  font-family: sans-serif;
 }
 
 #companyInfo {
-  border-top: 0px;
-  position: absolute;
-  z-index: 5000;
-  top: 90%;
+  position: relative;
+  margin-left: 15px;
 }
+
 .leaflet-right {
   display: none;
 }
 
 .mapContainer {
+  margin-top: 0px;
   position: absolute;
-  height: 90%;
+  height: 100%;
   width: 100%;
 }
 
 .searchBox {
-  height: 80px;
-  width: 75%;
-  left: 12.5%;
-  top: 70%;
+  position: relative;
+  height: 160px;
+  width: 1036px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 360px;
   text-align: center;
-  background-color: lightgrey;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.2);
   z-index: 1000;
   border: 15px;
-  position: absolute;
-  border-radius: 16px;
+  border-radius: 10px;
+}
+
+.autocomplete {
+  position: relative;
+  top: 52px;
+  margin-left: 8px;
+}
+
+#map-button {
+  width: 125px;
+  height: 40px;
+  padding: 12px;
+  border-radius: 23px;
   border-width: 0px;
-}
-
-.autocomplete {
   position: relative;
-  top: 12px;
-  padding: 10px;
+  background-color: #1C73E8;
+  color: #FFFFFF;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.map-button {
-  width: 20%;
-  padding: 10px;
-  border-radius: 4px;
-  border-width: 1px;
+#map-button.map-button {
+  top: 85px
 }
 
-.from {
-  width: 35%;
-  padding: 10px;
-  border-radius: 4px;
-  border-width: 1px;
+#map-button:hover {
+  background-color: #5CA1FF;
 }
 
-.to {
-  width: 35%;
-  padding: 10px;
-  border-radius: 4px;
-  border-width: 1px;
+input#fromInput.fromI {
+  padding: 16px;
+  height: 20px;
+  width: 288px;
 }
 
-.autocomplete {
-  position: relative;
-  top: 12px;
-  padding: 10px;
+input#toInput.toI {
+  padding: 16px;
+  height: 20px;
+  width: 288px;
 }
 
 .autocompleteList {
-  position: relative;
-  padding: 0px;
+  float: left;
+  margin-left: 8px;
+  margin-right: 8px;
   text-align: left;
-  margin: 0px;
 }
+
+#resultsAndFilter {
+  margin-top: 400px;
+  width: 1036px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto
+}
+
+#filter {
+  background-color: white;
+  padding-left: 15px;
+  width: 290px;
+  height: 800px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border-width: 0px;
+}
+
+
+#autocompleteItem {
+  position: inherit;
+}
+
+input#dateTime.dateAndTime {
+  padding: 16px;
+  height: 20px;
+  width: 288px;
+}
+
+div#from {
+  height: 56px;
+  padding: 0px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+div#to {
+  height: 56px;
+  padding: 0px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+div#dateTime {
+  width: 296px;
+  margin-left: 16px;
+  height: 22px;
+  padding: 16px;
+  border-radius: 4px;
+  border-width: 1px;
+}
+
+/* -----------------------------------------  */
+/* This is all the autocomplete list styling  */
+/* -----------------------------------------  */
 
 ul {
   list-style: none;
   white-space: nowrap;
+  word-wrap: break-word;
   overflow: hidden;
   list-style: none;
   padding-inline-start: 0px;
   left: 20px;
-  padding: 10px;
+  margin-top: 0px;
+  background-color: white;
+  width: 324px;
+  border-width: thin;
 }
 
 ul li {
-  padding: 8px 0px;
+  height: 47px;
+  padding-left: 16px;
   font-family: sans-serif;
   font-size: 0.8rem;
+  border-top-color: white;
+  line-height: 47px;
 }
 
-#from {
-  width: 32%;
-  left: 22px;
-  background-color: white;
+ul li:hover {
+  background-color: #5CA1FF;
 }
 
-#to {
-  position: relative;
-  width: 32%;
-  left: 290px;
-  background-color: white;
+/* ------------------------------------------------  */
+/* This is the end of the autocomplete list styling  */
+/* ------------------------------------------------  */
+
+
+#results {
+  height: 200px;
+  float: right;
+  border-radius: 8px;
+  border-width: 0px;
 }
+
+/* ------------------------------------  */
+/* This is all the listing card styling  */
+/* ------------------------------------  */
+.companyImage {
+  height: 100%;
+  width: 300px;
+  background-color: red;
+  border-top-left-radius: inherit;
+  border-bottom-left-radius: inherit;
+}
+
+.companyLogo {
+  width: 80px;
+  height: 80px;
+  background-color: blue;
+  border-radius: 100%;
+  margin-top: -185px;
+  margin-left: 205px;
+}
+
+.companyInfo {
+  padding: 15px;
+  margin-top: -85px;
+  width: 385px;
+  margin-left: 300px;
+}
+
+.companyPrice {
+  background-color: green;
+  height: 30px;
+}
+
+.companyRating {
+  background-color: pink;
+  height: 30px;
+}
+
+.companyInfo h2 {
+  margin-top: 0px;
+}
+
+.listingCard {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background-color: white;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* -------------------------------------------  */
+/* This is the end of the listing card styling  */
+/* -------------------------------------------  */

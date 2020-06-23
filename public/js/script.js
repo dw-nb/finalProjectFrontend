@@ -1,9 +1,10 @@
 /*
 Main: Setup all universal variables.
 */
+document.getElementById("resultsAndFilter").style.display = "none";
 
 // you need to add the Mapbox API key here once you pull it.
-MAPBOX_API_KEY = '' //check the .env file
+MAPBOX_API_KEY = 'pk.eyJ1IjoiZG91Z2xhc25vYmxlIiwiYSI6ImNrYWhpNnEwNzA1a2EyeG81a2ppdng1Y3AifQ.jnYMxyBfb7-VdAX1R6cP0Q' //check the .env file
 
 // Default from location
 let fromLatitude = '-33.8688';
@@ -146,11 +147,21 @@ function updateLocation(type, index) {
 // If no input has been used, it uses the default from-to points.
 document.getElementById('map-button').addEventListener('click', function() {
   // TODO: clear existing information on the map. possibly with: clearLayers() | POSSIBLE LOCATION 1
-  mapRoute(fromLatitude, fromLongitude, toLatitude, toLongitude)
-  updateMap(markerFromPoint, markerToPoint)
+  document.getElementById('mapContainer').style.cssText = 'margin-top: 0px; position: absolute; height: 50%; width: 100%; transition: 0.5s';
+  document.getElementById("resultsAndFilter").style.display = "block";
+  waiting()
   checkIfPrice(selectedFromPoint, selectedToPoint)
 })
 
+function waiting() {
+  // this waits 0.5s while the container is resized
+  setTimeout(function() {
+    // This function check if the map container has changed size and then refreshes the map to ensure it fits.
+    map.invalidateSize()
+    mapRoute(fromLatitude, fromLongitude, toLatitude, toLongitude)
+    updateMap(markerFromPoint, markerToPoint)
+  }, 600);
+}
 
 // This function is being used to update the map with the route
 function mapRoute(fromLatitude, fromLongitude, toLatitude, toLongitude) {
@@ -183,15 +194,12 @@ function updateMap(markerFromPoint, markerToPoint) {
   // this group variable creates a box, so the map can be zoomed out to an appropriate
   // z-index level and the entire route be visible
   let group = L.featureGroup(markers).addTo(map);
-
   // this provides the user with map panning to get to their location, while it zooms
   // to the indicated level of padding
-  setTimeout(function() {
-    map.fitBounds(group.getBounds(), {
-      // additional bottom padding is used because the input box sits ontop of the map
-      padding: [0, 160]
-    });
-  }, 1000);
+  map.flyToBounds(group.getBounds(), {
+    // additional bottom padding is used because the input box sits ontop of the map
+    padding: [0, 100]
+  })
 }
 
 /*

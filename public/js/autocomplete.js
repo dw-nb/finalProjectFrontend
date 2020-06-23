@@ -1,3 +1,4 @@
+// This function is used to create an autocomplete array
 function autocomplete(type, array) {
   // this removes any pre-existing autocomplete items before appending new ones
   if (document.getElementById("autocompleteList")) {

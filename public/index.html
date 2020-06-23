@@ -20,25 +20,63 @@
 
   <!-- IP address lookup tool -->
   <!-- <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script> -->
-  <title>COMPACKED</title>
+  <title>COMPAKT</title>
 </head>
 
 <body>
   <div id="mapAndSearch" class='mapAndSearch'>
     <div id="mapContainer" class='mapContainer'></div>
   </div>
-  <div id="searchBox" class='searchBox'>
+
+  <section id="searchBox" class='searchBox'>
     <div class="autocomplete">
-      <input id="fromInput" autocomplete="off" class="from" type="text" name="location" placeholder="From Location">
-      <input id="toInput" autocomplete="off" class="to" type="text" name="location" placeholder="To Location">
-      <button id="map-button" class='map-button' type="submit">Visualise Route</button>
+
+      <div id="from" class='autocompleteList'>
+        <input id="fromInput" autocomplete="off" class="fromI" type="text" name="location" placeholder="From Location">
+      </div>
+
+      <div id="to" class='autocompleteList'>
+        <input id="toInput" autocomplete="off" class="toI" type="text" name="location" placeholder="To Location">
+      </div>
+
+      <div id="dateTimeDiv" class='autocompleteList'>
+        <input id="dateTime" autocomplete="off" class="dateAndTime" type="text" name="dateTime" placeholder="DateTime">
+      </div>
+
     </div>
-    <div id="from" class='autocompleteList'></div>
-    <div id="to" class='autocompleteList'></div>
-  </div>
-  <div id="companyInfo">
-    <h3 id="thePrice">Enter locations to get trip cost</h3>
-  </div>
+    <button id="map-button" class='map-button' type="submit">Search</button>
+  </section>
+  <section id="resultsAndFilter" class='resultsNFilter'>
+    <div id="results" class="resultList">
+      <div class="listingCard">
+        <div class="companyImage">
+        </div>
+        <div class="companyLogo">
+
+        </div>
+        <div class="companyInfo">
+          <div class="companyName">
+            <h2>Company Name Goes Here</h2>
+          </div>
+          <div class="companyDescription">
+            <p>
+              company description goes here
+            </p>
+          </div>
+          <div class="companyRating">
+
+          </div>
+          <div class="companyPrice">
+            <h3 id="thePrice"></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="filter" class="filterList">
+    </div>
+  </section>
+
+
   <!-- <script type="text/javascript" src='config.js'></script> -->
   <script type="text/javascript" src='js/autocomplete.js'></script>
   <script type="text/javascript" src='js/suburbData.js'></script>
